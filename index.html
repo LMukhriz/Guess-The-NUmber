@@ -6,7 +6,28 @@
     <h1>Guess The Number</h1>
     <p>Im thinking of a number between 1 to 100. can you guess it?</p>
     <input type ="number" placeholder ="Insert Number" id="guess"></input>
-    <button>Shoot</button>
-    <p>Result</p>
+    <button onclick="checkGuess()">Shoot</button>
+    <p id=result"result"></p>
   </body>
+  <script>
+    let secretNumber = Math.floor(Math.random() * 100) + 1;
+
+    function checkGuess(){
+
+      let guess = document.getElementById("guess").value;
+      let resultElement = document.getElementById("result");
+
+      if(guess == secretNumber)
+      {
+        result.textContent = "Congrats, Tepat!";
+      }
+      else if (guess > secretNumber){
+        resultElement.textContent = "Nombor Besar, teka nombor lebih kecil";
+      }
+      else{
+        resultElement.textContent = "Nombor Kecil, teka nombor yang lebih besar";
+      }
+      
+    }
+  </script>
 </html>
